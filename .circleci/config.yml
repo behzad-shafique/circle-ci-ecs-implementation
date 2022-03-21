@@ -21,7 +21,7 @@ jobs:
        - run:
             name: Get Cluster Info
             command: |
-              SERVICE_OBJ=$(aws ecs describe-service --cluster  "${ECS_CLUSTER_NAME}" --services "${ECS_SERVICE_NAME}")
+              SERVICE_OBJ=$(aws ecs describe-services --cluster  "${ECS_CLUSTER_NAME}" --services "${ECS_SERVICE_NAME}")
               VPC_OBJ=$(echo SERVICES_OBJ)
 workflows:
   run-task:
