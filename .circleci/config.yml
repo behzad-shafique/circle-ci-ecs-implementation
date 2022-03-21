@@ -28,4 +28,5 @@ workflows:
   run-task:
     jobs:
       - test-apache:
-          context: "ecs-deployment"
+          context:
+            - ecs-deployment
