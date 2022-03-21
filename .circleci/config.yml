@@ -41,7 +41,7 @@ jobs:
               launch-type: ""
               task-definition: circle-ci-hello-world
               subnet-ids: '$SUBNE_ONE, $SUBNET_TWO'
-              security-groups-ids: $SECURITY_GROUP_IDS
+              security-group-ids: $SECURITY_GROUP_IDS
               assign-public-ip:  ENABLED
               count : 4
 
