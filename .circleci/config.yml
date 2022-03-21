@@ -6,7 +6,8 @@ orbs:
   shellcheck: circleci/shellcheck@2.2
   jq: circleci/jq@2.2.0
 
-  jobs:
+  
+jobs:
     test-apache:
       docker:
         - image: cimg/base:stable
@@ -18,8 +19,6 @@ orbs:
             command: |
               SERVICE_OBJ=$(aws ecs describe-service --cluster  "${ECS_CLUSTER_NAME"} --services "${ECS_SERVICE_NAME")
               VPC_OBJ=$(echo SERVICES_OBJ)
-
-
 workflows:
   run-task:
     jobs:
