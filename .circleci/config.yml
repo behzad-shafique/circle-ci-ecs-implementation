@@ -24,7 +24,7 @@ jobs:
               SUBNET_ONE= $(echo $VPC_OBJ | jq '.subnet[0]')
               SUBNET_TWO= $(echo $VPC_OBJ | jq '.subent[1]')
               SECURITY_GROUP_IDS= $(echo $VPC_OBJ | jq '.securityGroups[0]')
-              CLUSTER_NAME=echo $ (echo $SERVICE_OBJ | jq '.services[].clusterArn')
+              CLUSTER_NAME=echo $(echo $SERVICE_OBJ | jq '.services[].clusterArn')
               echo "export SUBENT_ONE = $SUBENT_ONE" >> $BASH_ENV
               echo "export SUBENT_TWO = $SUBENT_TWO" >>BASH_ENV
               echo "export  SECURITY_GROPS_ID = $SECURITY_GROUP_ID" >> $BASH_ENV
