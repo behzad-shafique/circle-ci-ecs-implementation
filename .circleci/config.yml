@@ -47,4 +47,5 @@ jobs:
 workflows:
   run-task:
     jobs:
-      - test-fargatespot
+      - test-fargatespot:
+          context: "ecs-deployment"
