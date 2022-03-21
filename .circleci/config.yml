@@ -21,9 +21,10 @@ jobs:
        - run:
             name: Get Cluster Info
             command: |
-              echo $ECS_CLUSTER_NAME
+              echo "${ECS_CLUSTER_NAME}"
+              
+workflows:
   run-task:
     jobs:
       - test-apache:
-          context:
-            - ecs-deployment
+          context: "ecs-deployment"
