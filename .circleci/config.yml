@@ -1,0 +1,26 @@
+version: '2.1'
+orbs:
+  aws-ecs: circleci/aws-ecs@2.0
+  aws-cli: circleci/aws-cli@1.3
+  orb-tools: circleci/orb-tools@10.0
+  shellcheck: circleci/shellcheck@2.2
+  jq: circleci/jq@2.2.0
+
+  jobs:
+    test-apache:
+      docker:
+        - image: cimg/base:stable
+      steps:
+       - aws-cli/setup
+       - jq/install
+       - run:
+            name: Get Cluster Info
+            command: |
+              SERVICE_OBJ=$(aws ecs describe-service --cluster  "${ECS_CLUSTER_NAME"} --services "${ECS_SERVICE_NAME")
+              VPC_OBJ=$(echo SERVICES_OBJ)
+
+
+workflows:
+  run-task:
+    jobs:
+      - test-apache
