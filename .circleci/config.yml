@@ -20,7 +20,7 @@ jobs:
               ECS_CLUSTER_NAME=${ECS_CLUSTER_NAME}
               ECS_SERVICE_NAME=${ECS_SERVICE_NAME}
               SERVICE_OBJ=$(aws ecs describe-services --cluster $ECS_CLUSTER_NAME --services $ECS_SERVICE_NAME)
-              VPC_OBJ=$(echo SERVICES_OBJ)
+              VPC_OBJ=$(echo $SERVICES_OBJ)
 workflows:
   run-task:
     jobs:
