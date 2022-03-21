@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:eu-west-1:705553741151:task-definition/circle-ci-hello-world:2"
+        LoadBalancerInfo:
+          ContainerName: "circle-ci-hello-world"
+          ContainerPort: 80
