@@ -27,7 +27,7 @@ jobs:
               CLUSTER_NAME=echo $(echo $SERVICE_OBJ | jq '.services[].clusterArn')
               echo "export SUBENT_ONE = $SUBENT_ONE" >> $BASH_ENV
               echo "export SUBENT_TWO = $SUBENT_TWO" >>BASH_ENV
-              echo "export  SECURITY_GROPS_ID = $SECURITY_GROUP_ID" >> $BASH_ENV
+              echo "export  SECURITY_GROPS_ID = $SECURITY_GROUP_ID" >> $BASH_ENV=$SECURITY_GROUP_IDS=$SECURITY_GROUP_IDS" >> $BASH_ENV" >> $BASH_ENV
               echo "export CLUSTER_NAME= $CLUSTER_NAME" >> BASH_ENV
 workflows:
   run-task:
