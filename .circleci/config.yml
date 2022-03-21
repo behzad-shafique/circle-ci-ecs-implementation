@@ -23,4 +23,5 @@ orbs:
 workflows:
   run-task:
     jobs:
-      - test-apache
+      - test-apache:
+      context: ecs_deployment
